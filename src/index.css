@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+.floating-icon {
+  position: absolute;
+  font-size: 5rem;           /* 👈 bigger so you can see them clearly */
+  opacity: 0.15;             /* subtle so text remains focus */
+  animation: float 12s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-25px) translateX(10px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(15px) translateX(-10px) rotate(-5deg);
+  }
+  75% {
+    transform: translateY(-20px) translateX(15px) rotate(3deg);
+  }
+}
+
+/* staggered timing so they move differently */
+.floating-icon:nth-child(1) { animation-delay: 0s; }
+.floating-icon:nth-child(2) { animation-delay: 2s; }
+.floating-icon:nth-child(3) { animation-delay: 4s; }
+.floating-icon:nth-child(4) { animation-delay: 6s; }
+.floating-icon:nth-child(5) { animation-delay: 8s; }
