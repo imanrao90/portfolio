@@ -5,6 +5,7 @@ import project3 from '../assets/images/projects/project3.png'
 import project4 from '../assets/images/projects/project4.png'
 import project5 from '../assets/images/projects/project5.png'
 import project6 from '../assets/images/projects/project6.png'
+import project2 from '../assets/images/projects/project2.png'
 
 
 const projects = [
@@ -49,6 +50,13 @@ const projects = [
       "A brief description of the project and the technologies used in its development.",
     image: project1,
     link: "https://weather-app-zeta-gray-28.vercel.app/",
+  },
+  {
+    title: "Blog post",
+    description:
+      "A brief description of the project and the technologies used in its development.",
+    image: project2,
+    link: "https://blog-post-7nzgnmbna-iman-raos-projects.vercel.app/",
   },
 ];
 
