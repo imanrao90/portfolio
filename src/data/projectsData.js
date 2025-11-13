@@ -1,6 +1,6 @@
 // src/data/projectsData.js
 import project1 from '../assets/images/projects/project1.png'
-// import project2 from '../assets/images/projects/project2.png'
+import project2 from '../assets/images/projects/project2.png'
 import project3 from '../assets/images/projects/project3.png'
 import project4 from '../assets/images/projects/project4.png'
 import project5 from '../assets/images/projects/project5.png'
@@ -36,13 +36,13 @@ const projects = [
     image: project6,
     link: "https://doctor-appointment-admin-j237xdmth-iman-raos-projects.vercel.app/",
   },
-  // {
-  //   title: "StayEase",
-  //   description:
-  //     "A brief description of the project and the technologies used in its development.",
-  //   image: project2,
-  //   link: "https://stayease-git-main-iman-raos-projects.vercel.app/",
-  // },
+  {
+    title: "StayEase",
+    description:
+      "A brief description of the project and the technologies used in its development.",
+    image: project2,
+    link: "https://stayease-git-main-iman-raos-projects.vercel.app/",
+  },
   {
     title: "Weather app",
     description:
