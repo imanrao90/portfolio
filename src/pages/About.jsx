@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 function About() {
   return (
-    <section className="min-h-screen bg-gray-50 flex flex-col items-center justify-center py-30 px-6">
-      <div className="max-w-4xl w-full bg-white rounded-2xl shadow-md p-10">
+    <section className="min-h-screen bg-[#0C2B4E] flex flex-col items-center justify-center py-30 px-6">
+      <div className="max-w-7xl w-full bg-[#eaedf1] rounded-2xl shadow-md p-10">
         {/* Header */}
         <h1 className="text-3xl font-bold text-gray-900 mb-6 text-center">
           About Me
@@ -15,7 +15,7 @@ function About() {
         </p> */}
 
         {/* Intro */}
-        <div className="space-y-6 text-gray-700 leading-relaxed">
+        <div className="space-y-6 text-gray-700  leading-relaxed">
           <p>
             Hi there! I’m{" "}
             <span className="font-semibold text-blue-600">Iman</span>, a

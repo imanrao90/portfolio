@@ -48,11 +48,11 @@ function ContactForm() {
   };
 
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center border-t border-gray-200 bg-[#f4f4f1] py-16 px-6 py-30">
+    <section className="min-h-screen flex flex-col justify-center items-center border-t border-gray-200 bg-[#0C2B4E] py-16 px-6 py-30">
       {/* Toast notification container */}
       <Toaster />
 
-      <div className="max-w-2xl w-full bg-white rounded-2xl shadow-md p-8">
+      <div className="max-w-2xl w-full bg-[#ecece5] rounded-2xl shadow-md p-8">
         <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
           Contact Me
         </h2>
@@ -67,7 +67,7 @@ function ContactForm() {
             {/* <label className="block text-sm font-medium text-gray-700 mb-1">
               Name
             </label> */}
-            <div className="flex items-center border border-gray-200  rounded-lg px-3">
+            <div className="flex items-center border border-gray-300  rounded-lg px-3">
               <User className="text-gray-400 w-5 h-5 mr-2" />
               <input
                 type="text"
@@ -84,7 +84,7 @@ function ContactForm() {
             {/* <label className="block text-sm font-medium text-gray-700 mb-1">
               Email
             </label> */}
-            <div className="flex items-center border border-gray-200  rounded-lg px-3">
+            <div className="flex items-center border border-gray-300  rounded-lg px-3">
               <Mail className="text-gray-400 w-5 h-5 mr-2" />
               <input
                 type="email"
@@ -101,7 +101,7 @@ function ContactForm() {
             {/* <label className="block text-sm font-medium text-gray-700 mb-1">
               Message
             </label> */}
-            <div className="flex items-start border border-gray-200 rounded-lg px-3">
+            <div className="flex items-start border border-gray-300 rounded-lg px-3">
               <MessageSquare className="text-gray-400 w-5 h-5 mt-2 mr-2" />
               <textarea
                 name="message"

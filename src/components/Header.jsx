@@ -45,17 +45,21 @@ export default function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex space-x-6 lg:space-x-8 text-gray-600 font-medium">
+        <ul className="hidden md:flex space-x-6 lg:space-x-8 font-medium">
           {navLinks.map((link) => (
             <li key={link.name}>
               <NavLink
                 to={link.path}
-                className={({ isActive }) => (
-                  isActive
+                className={({ isActive }) =>
+                  `
+          transition duration-200
+          ${isActive
                     ? "text-blue-600 border-b-2 border-blue-600 pb-1"
-                    : "hover:text-blue-600 transition"
-
-                )
+                    : isScrolled
+                      ? "text-gray-700 hover:text-blue-600"
+                      : "text-gray-200 hover:text-blue-400"
+                  }
+        `
                 }
               >
                 {link.name}
@@ -63,6 +67,8 @@ export default function Header() {
             </li>
           ))}
         </ul>
+
+
 
         {/* Mobile Menu Button */}
         <button

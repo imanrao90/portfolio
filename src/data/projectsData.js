@@ -3,51 +3,52 @@ import project1 from '../assets/images/projects/project1.png'
 import project2 from '../assets/images/projects/project2.png'
 import project3 from '../assets/images/projects/project3.png'
 import project4 from '../assets/images/projects/project4.png'
+import project5 from '../assets/images/projects/project5.png'
+import project6 from '../assets/images/projects/project6.png'
 
 
 const projects = [
   {
-    title: "Project Title 1",
+    title: "Project management",
     description:
-      "A brief description of the project and the technologies used in its development.",
-    image: project1,
-    link: "https://weather-app-zeta-gray-28.vercel.app/",
+      "A personal experiment with design systems and accessibility in React.",
+    image: project5,
+    link: "https://project-management-frontend-indol.vercel.app",
   },
   {
-    title: "Project Title 2",
-    description:
-      "A brief description of the project and the technologies used in its development.",
-    image: project2,
-    link: "https://stayease-git-main-iman-raos-projects.vercel.app/",
-  },
-  {
-    title: "Project Title 3",
+    title: "The wild oasis",
     description:
       "Another cool project showcasing animations, responsive layouts, or API integrations.",
     image: project3,
     link: "https://world-wise-ukib.vercel.app/",
   },
   {
-    title: "Project Title 4",
+    title: "Carely",
     description:
-      "A dynamic web app using React, Node.js, and Tailwind CSS.",
+      "Developed a full-stack web application on reactJs that allows patients to book appointments and manage schedules. Includes an admin dashboard for managing doctors and a backend for secure data storage.",
     image: project4,
     link: "https://doctor-appointment-frontend-mocha.vercel.app/",
   },
   {
-    title: "Project Title 5",
+    title: "Carely admin panel",
     description:
       "A portfolio project focusing on clean UI and performance optimization.",
-    image: project5,
+    image: project6,
     link: "https://doctor-appointment-admin-j237xdmth-iman-raos-projects.vercel.app/",
   },
   {
-    title: "Project Title 6",
+    title: "StayEase",
     description:
-      "A personal experiment with design systems and accessibility in React.",
-    image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80",
-    link: "#",
+      "A brief description of the project and the technologies used in its development.",
+    image: project2,
+    link: "https://stayease-git-main-iman-raos-projects.vercel.app/",
+  },
+  {
+    title: "Weather app",
+    description:
+      "A brief description of the project and the technologies used in its development.",
+    image: project1,
+    link: "https://weather-app-zeta-gray-28.vercel.app/",
   },
 ];
 
