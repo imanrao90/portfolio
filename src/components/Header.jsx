@@ -1,141 +1,105 @@
-import React, { useEffect, useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import { NavLink as RouterNavLink, useLocation } from 'react-router-dom';
+import { Menu, X, Code } from 'lucide-react';
+// import { NAV_LINKS } from '../constants';
+import { NAV_LINKS } from '../data/constants';
 
-export default function Header() {
+function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
-  const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Projects", path: "/projects" },
-    { name: "Contact", path: "/contact" },
-  ];
-
   useEffect(() => {
-    // Scroll detection for blur/shadow
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // initial check
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close mobile menu when route changes
   useEffect(() => {
-    // Auto close mobile menu when route changes
     setIsOpen(false);
-  }, [location.pathname]);
+  }, [location]);
 
   return (
-    <header
-      className={`fixed top-0 left-0 w-full flex items-center justify-between transition-all duration-500 z-50 ${isScrolled
-        ? "bg-[#f4f4f4]/80 shadow-md text-gray-700 backdrop-blur-lg py-4"
-        : "py-4 md:py-6"
-        } px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32`}
+    <nav
+      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled
+        ? 'bg-white/90 backdrop-blur-md shadow-sm py-4'
+        : 'bg-transparent py-6'
+        }`}
     >
-      <nav className="w-full flex justify-between items-center">
+      <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
-        <Link
+        <RouterNavLink
           to="/"
-          className="text-2xl font-bold text-blue-600 hover:text-blue-700 transition"
+          className="flex items-center gap-2 text-blue-950 font-bold text-xl md:text-2xl"
         >
-          Iman<span className="text-amber-300">Rao</span>
-        </Link>
+          <div className="p-2 bg-blue-900 rounded-lg text-white">
+            <Code size={20} strokeWidth={3} />
+          </div>
+          <span>ImanRao</span>
+        </RouterNavLink>
 
-        {/* Desktop Nav */}
-        <ul className="hidden md:flex space-x-6 lg:space-x-8 font-medium">
-          {navLinks.map((link) => (
-            <li key={link.name}>
-              <NavLink
-                to={link.path}
-                className={({ isActive }) =>
-                  `
-          transition duration-200
-          ${isActive
-                    ? "text-blue-600 border-b-2 border-blue-600 pb-1"
-                    : isScrolled
-                      ? "text-gray-700 hover:text-blue-600"
-                      : "text-gray-200 hover:text-blue-400"
-                  }
-        `
-                }
-              >
-                {link.name}
-              </NavLink>
-            </li>
+        {/* Desktop Links */}
+        <div className="hidden md:flex items-center gap-8">
+          {NAV_LINKS.map((link) => (
+            <RouterNavLink
+              key={link.name}
+              to={link.path}
+              className={({ isActive }) => `
+                text-sm font-medium transition-colors hover:text-accent
+                ${isActive ? 'text-blue-950 font-semibold' : 'text-gray-500'}
+              `}
+            >
+              {link.name}
+            </RouterNavLink>
           ))}
-        </ul>
+          <RouterNavLink
+            to="/contact"
+            className="px-5 py-2.5 bg-blue-900 text-white text-sm font-medium rounded-lg hover:bg-blue-800 transition-colors shadow-sm"
+          >
+            Hire Me
+          </RouterNavLink>
+        </div>
 
-
-
-        {/* Mobile Menu Button */}
+        {/* Mobile Toggle */}
         <button
-          className="md:hidden text-gray-600 hover:text-blue-600 focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
+          className="md:hidden text-blue-950 p-2 focus:outline-none"
         >
-          {isOpen ? (
-            // Close icon
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          ) : (
-            // Hamburger icon
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          )}
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
-      </nav>
+      </div>
 
-      {/* Mobile Dropdown */}
+      {/* Mobile Menu */}
       <div
-        className={`absolute top-full left-0 w-full bg-white border-t border-gray-200 shadow-sm transition-all duration-300 ease-in-out overflow-hidden md:hidden ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        className={`md:hidden absolute top-full left-0 w-full bg-white border-t border-gray-100 shadow-lg transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
           }`}
       >
-        <ul className="flex flex-col items-center space-y-4 py-4 text-gray-700 font-medium">
-          {navLinks.map((link) => (
-            <li key={link.name}>
-              <NavLink
-                to={link.path}
-                onClick={() => setIsOpen(false)}
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-blue-600 border-b-2 border-blue-600 pb-1"
-                    : "hover:text-blue-600 transition"
-                }
-              >
-                {link.name}
-              </NavLink>
-            </li>
+        <div className="flex flex-col p-6 gap-4">
+          {NAV_LINKS.map((link) => (
+            <RouterNavLink
+              key={link.name}
+              to={link.path}
+              className={({ isActive }) => `
+                text-base font-medium py-2 border-b border-gray-50
+                ${isActive ? 'text-blue-950' : 'text-gray-500'}
+              `}
+            >
+              {link.name}
+            </RouterNavLink>
           ))}
-        </ul>
+          <RouterNavLink
+            to="/contact"
+            className="mt-2 w-full text-center px-6 py-3 bg-blue-950 text-white rounded-lg hover:bg-blue-800 transition-colors"
+          >
+            Hire Me
+          </RouterNavLink>
+        </div>
       </div>
-    </header >
+    </nav>
   );
 }
 
+export default Header;

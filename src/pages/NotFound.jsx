@@ -1,6 +1,4 @@
-import React from "react";
 import { Link } from "react-router-dom";
-// import { Code2 } from "lucide-react"; // optional tech icon
 
 function NotFound() {
   return (

@@ -49,7 +49,6 @@ function ContactForm() {
 
   return (
     <section className="min-h-screen flex flex-col justify-center items-center border-t border-gray-200 bg-[#0C2B4E] py-16 px-6 py-30">
-      {/* Toast notification container */}
       <Toaster />
 
       <div className="max-w-2xl w-full bg-[#ecece5] rounded-2xl shadow-md p-8">
@@ -64,9 +63,6 @@ function ContactForm() {
         <form ref={form} onSubmit={sendEmail} className="space-y-5">
           {/* Name */}
           <div>
-            {/* <label className="block text-sm font-medium text-gray-700 mb-1">
-              Name
-            </label> */}
             <div className="flex items-center border border-gray-300  rounded-lg px-3">
               <User className="text-gray-400 w-5 h-5 mr-2" />
               <input
@@ -98,9 +94,6 @@ function ContactForm() {
 
           {/* Message */}
           <div>
-            {/* <label className="block text-sm font-medium text-gray-700 mb-1">
-              Message
-            </label> */}
             <div className="flex items-start border border-gray-300 rounded-lg px-3">
               <MessageSquare className="text-gray-400 w-5 h-5 mt-2 mr-2" />
               <textarea

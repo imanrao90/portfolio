@@ -1,11 +1,41 @@
-function Button({ title, onClick, align, font }) {
+import { Link } from 'react-router-dom';
+
+const Button = ({
+  children,
+  variant = 'primary',
+  to,
+  className = '',
+  fullWidth = false,
+  ...props
+}) => {
+  const baseStyles =
+    "inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed hover:-translate-y-0.5 active:translate-y-0 cursor-pointer";
+
+  const variants = {
+    primary:
+      "bg-blue-950 text-white hover:bg-blue-900 focus:ring-blue-950 shadow-md hover:shadow-lg",
+    secondary:
+      "bg-white text-blue-950 border border-blue-100 hover:border-blue-300 hover:bg-blue-50 focus:ring-blue-200",
+    outline:
+      "bg-transparent border-2 border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white",
+  };
+
+  const widthClass = fullWidth ? "w-full" : "";
+  const combinedClasses = `${baseStyles} ${variants[variant]} ${widthClass} ${className}`;
+
+  if (to) {
+    return (
+      <Link to={to} className={combinedClasses} {...props}>
+        {children}
+      </Link>
+    );
+  }
+
   return (
-    <div className={`flex flex-col pb-10 justify-center items-center text-center ${align === 'left' && 'md:items-start md:text-left'} bg-[#c2c5cc]`}>
-      <h1 onClick={onClick} className={`text-md border border-gray-500 text-gray-700 py-2 px-3 cursor-pointer hover:bg-gray-100 md:text-[40px ${font || 'font-playfair'}]`}>{title}</h1>
-      {/* <p className="text-sm md:text-base text-gray-500/90 mt-2 max-w-174">{subTitle}</p> */}
-    </div>
-  )
-}
+    <button className={combinedClasses} {...props}>
+      {children}
+    </button>
+  );
+};
 
-export default Button
-
+export default Button;

@@ -1,31 +1,101 @@
 @import "tailwindcss";
-
-.floating-icon {
-  position: absolute;
-  font-size: 5rem;           /* 👈 bigger so you can see them clearly */
-  opacity: 0.15;             /* subtle so text remains focus */
-  animation: float 12s ease-in-out infinite;
-  transform-origin: center;
+/* ✅ Global Body Styling */
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #ffffff;
+  color: #0a1a44;
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) translateX(0) rotate(0deg);
+/* ✅ Custom Scrollbar (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f4fa;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #203e7a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0a1a44;
+}
+
+/* ✅ Firefox Scrollbar Support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #203e7a #f0f4fa;
+}
+
+.cloud-icon {
+  padding: 18px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.cloud-icon {
+  padding: 22px;
+  background: white;
+  border-radius: 22px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+@keyframes cloud {
+  0% {
+    transform: translate(0, 0);
   }
   25% {
-    transform: translateY(-25px) translateX(10px) rotate(5deg);
+    transform: translate(12px, -16px);
   }
   50% {
-    transform: translateY(15px) translateX(-10px) rotate(-5deg);
+    transform: translate(-10px, 10px);
   }
   75% {
-    transform: translateY(-20px) translateX(15px) rotate(3deg);
+    transform: translate(14px, 6px);
+  }
+  100% {
+    transform: translate(0, 0);
   }
 }
 
-/* staggered timing so they move differently */
-.floating-icon:nth-child(1) { animation-delay: 0s; }
-.floating-icon:nth-child(2) { animation-delay: 2s; }
-.floating-icon:nth-child(3) { animation-delay: 4s; }
-.floating-icon:nth-child(4) { animation-delay: 6s; }
-.floating-icon:nth-child(5) { animation-delay: 8s; }
+/* Different speeds + delays for randomness */
+.animate-cloud-1 {
+  animation: cloud 6s 0s ease-in-out infinite;
+}
+.animate-cloud-2 {
+  animation: cloud 7s 1s ease-in-out infinite;
+}
+.animate-cloud-3 {
+  animation: cloud 8s 0.5s ease-in-out infinite;
+}
+.animate-cloud-4 {
+  animation: cloud 9s 1.2s ease-in-out infinite;
+}
+.animate-cloud-5 {
+  animation: cloud 10s 0.3s ease-in-out infinite;
+}
+.animate-cloud-6 {
+  animation: cloud 11s 0.8s ease-in-out infinite;
+}
+.animate-cloud-7 {
+  animation: cloud 12s 1.5s ease-in-out infinite;
+}
+.animate-cloud-8 {
+  animation: cloud 13s 0.4s ease-in-out infinite;
+}
+.animate-cloud-9 {
+  animation: cloud 14s 0.9s ease-in-out infinite;
+}
+.animate-cloud-10 {
+  animation: cloud 15s 0.2s ease-in-out infinite;
+}
+.animate-cloud-11 {
+  animation: cloud 16s 0.7s ease-in-out infinite;
+}
+.animate-cloud-12 {
+  animation: cloud 17s 1.3s ease-in-out infinite;
+}
