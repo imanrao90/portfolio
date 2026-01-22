@@ -1,6 +1,6 @@
 import React from 'react';
 import Section from '../components/Section';
-import { EXPERIENCES } from '../data/constants';
+import { EXPERIENCES, SKILLS } from '../data/constants';
 import { GraduationCap, Briefcase } from 'lucide-react';
 
 function About() {
@@ -25,27 +25,45 @@ function About() {
             <h1 className="text-4xl font-bold text-blue-950 mb-6">About Me</h1>
             <div className="prose prose-lg text-gray-600">
               <p className="mb-4">
-                Hello! I'm a passionate Frontend Developer with a keen eye for design and a drive to create seamless digital experiences.
-              </p>
-              <p className="mb-4">
-                My journey began when I edited my first HTML file to change the background color of a webpage. Since then, I've been hooked on the infinite possibilities of web development. I've spent hundreds of hours mastering JavaScript, React, and the ecosystem surrounding them.
-              </p>
-              <p>
-                When I'm not coding, you can find me exploring new UI trends, contributing to open source, or hiking. I believe in continuous learning and am eager to apply my skills in a professional environment.
+                I am a Frontend Developer with skills in HTML, CSS, JavaScript, and React. I have built small projects to practice creating responsive and user-friendly web interfaces. I am familiar with tools in the React ecosystem and have experience applying them in practical projects. I am seeking a frontend internship to gain hands-on experience and contribute to real-world projects in a professional setting.
               </p>
             </div>
           </div>
         </div>
       </Section >
 
+      {/* SKILLS SECTION */}
+      <Section bgColor="light">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold text-blue-950 mb-4">
+            Tech Stack & Skills
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Tools and technologies I use to bring ideas to life.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+          {SKILLS.map((skill) => (
+            <div
+              key={skill.name}
+              className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center justify-center gap-4 hover:-translate-y-1 transition-transform duration-300"
+            >
+              <div className="text-4xl">{skill.icon}</div>
+              <span className="font-medium text-blue-950">{skill.name}</span>
+            </div>
+          ))}
+        </div>
+      </Section>
+
       {/* Experience & Education */}
-      <Section Section bgColor="light" >
+      {/* <Section Section bgColor="light" >
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-blue-950 mb-12 text-center">Journey So Far</h2>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-12"> */}
             {/* Experience */}
-            <div>
+            {/* <div>
               <div className="flex items-center gap-3 mb-8">
                 <Briefcase className="text-accent" size={28} />
                 <h3 className="text-2xl font-bold text-blue-950">Experience</h3>
@@ -61,10 +79,10 @@ function About() {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
 
             {/* Education */}
-            <div>
+            {/* <div>
               <div className="flex items-center gap-3 mb-8">
                 <GraduationCap className="text-accent" size={28} />
                 <h3 className="text-2xl font-bold text-blue-950">Education</h3>
@@ -88,7 +106,7 @@ function About() {
 
           </div>
         </div>
-      </Section >
+      </Section > */}
     </div >
   );
 }

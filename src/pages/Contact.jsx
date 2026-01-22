@@ -71,12 +71,12 @@ function Contact() {
                 <div>
                   <h3 className="font-bold text-blue-950">Phone</h3>
                   <a href="tel:+1234567890" className="text-gray-600 hover:text-accent transition-colors">
-                    +1 (555) 123-4567
+                    +92 3432818310
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
+              {/* <div className="flex items-start gap-4">
                 <div className="p-3 bg-blue-50 rounded-lg text-blue-950">
                   <MapPin size={24} />
                 </div>
@@ -86,7 +86,7 @@ function Contact() {
                     San Francisco, CA<br />(Open to Remote)
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 

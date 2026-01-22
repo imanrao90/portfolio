@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaGitAlt, FaGithub } from 'react-icons/fa';
-import { SiTailwindcss, SiVite, SiTypescript } from 'react-icons/si';
+import { SiTailwindcss, SiVite, SiTypescript, SiNextdotjs } from 'react-icons/si';
 import { projectsImages } from './projectsImages';
 import project2 from '../assets/images/projects/project2.png'
 import project3 from '../assets/images/projects/project3.png'
@@ -8,6 +8,7 @@ import project4 from '../assets/images/projects/project4.png'
 import project5 from '../assets/images/projects/project5.png'
 import project6 from '../assets/images/projects/project6.png'
 import project7 from '../assets/images/projects/project7.png'
+import { FaDiagramNext } from 'react-icons/fa6';
 
 // Navigation Links
 export const NAV_LINKS = [
@@ -22,10 +23,11 @@ export const SKILLS = [
   { name: 'HTML5', icon: <FaHtml5 className="text-orange-500" />, category: 'frontend' },
   { name: 'CSS3', icon: <FaCss3Alt className="text-blue-500" />, category: 'frontend' },
   { name: 'JavaScript', icon: <FaJs className="text-yellow-400" />, category: 'frontend' },
-  { name: 'React', icon: <FaReact className="text-cyan-400" />, category: 'frontend' },
+  { name: 'React JS', icon: <FaReact className="text-cyan-400" />, category: 'frontend' },
+  { name: 'Next JS', icon: <SiNextdotjs className="text-yellow-400" />, category: 'frontend' },
   { name: 'Tailwind CSS', icon: <SiTailwindcss className="text-cyan-500" />, category: 'frontend' },
   // { name: 'TypeScript', icon: <SiTypescript className="text-blue-600" />, category: 'frontend' },
-  { name: 'Git', icon: <FaGitAlt className="text-red-500" />, category: 'tools' },
+  // { name: 'Git', icon: <FaGitAlt className="text-red-500" />, category: 'tools' },
   { name: 'GitHub', icon: <FaGithub className="text-gray-800" />, category: 'tools' },
   { name: 'Vite', icon: <SiVite className="text-purple-500" />, category: 'tools' },
 ];

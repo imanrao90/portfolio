@@ -19,7 +19,7 @@ function Footer() {
 
           <div className="flex gap-6">
             <a
-              href="https://github.com"
+              href="https://github.com/imanrao90"
               target="_blank"
               rel="noreferrer"
               className="text-blue-100 hover:text-white transition-colors hover:-translate-y-1 transform duration-300"
@@ -27,21 +27,21 @@ function Footer() {
               <Github size={24} />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/iman-rao-5b8b42380/"
               target="_blank"
               rel="noreferrer"
               className="text-blue-100 hover:text-white transition-colors hover:-translate-y-1 transform duration-300"
             >
               <Linkedin size={24} />
             </a>
-            <a
+            {/* <a
               href="https://twitter.com"
               target="_blank"
               rel="noreferrer"
               className="text-blue-100 hover:text-white transition-colors hover:-translate-y-1 transform duration-300"
             >
               <Twitter size={24} />
-            </a>
+            </a> */}
             <Link
               to="/contact"
               className="text-blue-100 hover:text-white transition-colors hover:-translate-y-1 transform duration-300"
